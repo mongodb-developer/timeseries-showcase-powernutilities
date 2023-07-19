@@ -129,6 +129,10 @@ In this example we'll use Atlas Charts since its a tool that is already availabl
 ]
 ```
 
+Info ⬆️: This allow us to see the measurements between 10:00 and 15:00. But it may not be very readable.
+
+We can use the `$setWindowFields` to render the chart more readable.
+
 ```js
 [
   {
@@ -155,6 +159,8 @@ In this example we'll use Atlas Charts since its a tool that is already availabl
   }
 ]
 ```
+
+![MongoDB Charts](media/charts2.png)
 
 Info ⬆️: The first step applies the $avg window function to the `powerConsumption` value. The data is partitioned by `$location` because the different locations are discrete series, and should be averaged separately. I've chosen to create a window over 20 documents at a time.
 
